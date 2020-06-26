@@ -20,4 +20,4 @@ Route::get('form',function(){
     return view('form');
 });
 Route::get('home','PagesController@index');
-Route::get('home/create','PagesController@create');
+Route::get('home/form','PagesController@create');
