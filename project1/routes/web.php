@@ -16,8 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('master');
 });
-Route::get('form',function(){
-    return view('form');
+Route::get('create',function(){
+    return view('create');
 });
 Route::get('home','PagesController@index');
-Route::get('home/form','PagesController@create');
+Route::get('home/create','PagesController@create');

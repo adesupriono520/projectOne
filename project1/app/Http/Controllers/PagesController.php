@@ -11,6 +11,6 @@ class PagesController extends Controller
         return view('/HOME.home',compact('mahasiswa'));
     }
     public function create(){
-        return view('form');
+        return view('create');
     }
 }
