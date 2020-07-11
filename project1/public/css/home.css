@@ -1,0 +1,17 @@
+body{
+    background-color: #999999;
+}
+.box-button{
+    display: inline-block;
+}
+.table-nav .tombol-nav{
+    display:block;
+    clear: both;
+    float:left;
+    width: 100%;
+}
+.paging{
+    width: 50%;
+    height: 50px;
+    display: block;
+}

@@ -10,8 +10,8 @@
         @extends('master')
             <div class="container"><br>
                 <div class="modal-body">
-                    {!! Form::open(['url' => 'home']) !!}
-                        @include('form',['submitButtonText' => 'Create'])
+                    {!! Form::model($edit,['method' => 'PATCH', 'action' => ['PagesController@update', $edit->id ]]) !!}
+                            @include('form',['submitButtonText' => 'Update'])
                     {!! Form::close() !!}
                 </div>
             </div>

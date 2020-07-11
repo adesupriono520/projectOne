@@ -14,9 +14,9 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h3 class="modal-title" id="exampleModalLabel">CREATE DATA</h3>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                               <a href="/home"><button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
-                                  </button>
+                                  </button></a>
                             </div>
                             <div class="modal-body">
                                 <div class="form-group">
@@ -56,8 +56,7 @@
                                     {!! Form::textarea('alamat',null,['class'=> 'form-control']) !!}
                                 </div>
                                 <div class="form-group">
-                                    {!! Form::submit('TAMBAH', ['class'=> 'btn btn-primary']) !!}
-                                    {!! Form::submit('CANCEL', ['class'=> 'btn btn-danger']) !!}
+                                    {!! Form::submit($submitButtonText,['class' => 'btn btn-primary form-controll'])!!}
                                 </div>
                             </div>
                         </div>
