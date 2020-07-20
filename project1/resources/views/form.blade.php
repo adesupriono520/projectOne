@@ -19,42 +19,116 @@
                                   </button></a>
                             </div>
                             <div class="modal-body">
-                                <div class="form-group">
+                                {{csrf_field() }}
+                                {{-- error nim --}}
+                                @if($errors->any())
+                                    <div class="form-group {{$errors->has('nim') ? 'has-error' : 'has-success'}}">
+                                @else
+                                    <div class="form-group">
+                                @endif
                                     {!! Form::label('nim','NIM :',['class' => 'control-label']) !!}
                                     {!! Form::text('nim',null,['class'=> 'form-control']) !!}
+                                    @if($errors->has('nim'))
+                                        <span class="help-block">{{ $errors->first('nim') }}</span>
+                                @endif
                                 </div>
-                                <div class="form-group">
+                                {{-- error nama --}}
+                                @if($errors->any())
+                                    <div class="form-group {{$errors->has('nama')  ? 'has-error' : 'has-success' }}">
+                                @else
+                                    <div class="form-group">
+                                @endif
                                     {!! Form::label('nama','NAMA :',['class' => 'control-label']) !!}
                                     {!! Form::text('nama',null,['class'=> 'form-control']) !!}
+                                    @if($errors->has('nama'))
+                                        <span class="help-block">{{ $errors->first('nama') }}</span>
+                                    @endif
                                 </div>
-                                <div class="form-group">
+                                {{-- error kelas --}}
+                                @if($errors->any())
+                                    <div class="form-group {{$errors->has('kelas')  ? 'has-error' : 'has-success'}}">
+                                @else
+                                    <div class="form-group">
+                                @endif
                                     {!! Form::label('kelas','KELAS :',['class' => 'control-label']) !!}
                                     {!! Form::text('kelas',null,['class'=> 'form-control']) !!}
+                                    @if($errors->has('kelas'))
+                                        <span class="help-block">{{ $errors->first('kelas') }}</span>
+                                    @endif
                                 </div>
-                                <div class="form-group">
+                                {{-- error shift --}}
+                                @if($errors->any())
+                                    <div class="form-group {{$errors->has('shift')  ? 'has-error' : 'has-success'}} ">
+                                @else
+                                    <div class="form-group">
+                                @endif
                                     {!! Form::label('shift','SHIFT :',['class' => 'control-label']) !!}
                                     {!! Form::text('shift',null,['class'=> 'form-control']) !!}
+                                    @if($errors->has('shift'))
+                                        <span class="help-block">{{ $errors->first('shift')}}</span>
+                                    @endif
                                 </div>
-                                <div class="form-group">
+                                {{-- error tgl_lahir --}}
+                                @if($errors->any())
+                                    <div class="form-group {{$errors->has('tgl_lahir') ? 'has-error' : 'has-success'}} ">
+                                @else
+                                    <div class="form-group">
+                                @endif
                                     {!! Form::label('tgl_lahir','TGL LAHIR :',['class' => 'control-label']) !!}
-                                    {!! Form::date('tgl_lahir',null,['class'=> 'form-control']) !!}
+                                    {!! Form::date('tgl_lahir', !empty($edit) ? $edit->tgl_lahir->format('Y-m-d') : null,['class'=> 'form-control', 'id' => 'tgl_lahir']) !!}
+                                    @if($errors->has('tgl_lahir'))
+                                        <span class="help-block">{{ $errors->first('tgl_lahir')}}</span>
+                                    @endif
                                 </div>
-                                <div class="form-group">
+                                {{-- error jenis_kelamin --}}
+                                @if($errors->any())
+                                    <div class="form-group {{$errors->has('jenis_kelamin')  ? 'has-error' : 'has-success'}}">
+                                 @else
+                                    <div class="form-group">
+                                @endif
                                     {!! Form::label('jenis_kelamin','JENIS KELAMIN :',['class' => 'control-label']) !!}
                                     {!! Form::text('jenis_kelamin',null,['class'=> 'form-control']) !!}
+                                    @if($errors->has('jenis_kelamin'))
+                                        <span class="help-block">{{ $errors->first('jenis_kelamin') }}</span>
+                                    @endif
                                 </div>
-                                <div class="form-group">
+                                {{-- error email --}}
+                                @if($errors->any())
+                                    <div class="form-group {{$errors->has('email')  ? 'has-error' : 'has-success'}}">
+                                 @else
+                                    <div class="form-group">
+                                @endif
                                     {!! Form::label('email','EMAIL :',['class' => 'control-label']) !!}
                                     {!! Form::email('email',null,['class'=> 'form-control']) !!}
+                                    @if($errors->has('email'))
+                                        <span class="help-block">{{$errors->first('email') }}</span>
+                                    @endif
                                 </div>
-                                <div class="form-group">
+                                {{-- error Phone --}}
+                                @if($errors->any())
+                                    <div class="form-group {{$errors->has('phone')  ? 'has-error' : 'has-success'}}">
+                                 @else
+                                    <div class="form-group">
+                                @endif
                                     {!! Form::label('phone','PHONE :',['class' => 'control-label']) !!}
                                     {!! Form::text('phone',null,['class'=> 'form-control']) !!}
+                                    @if($errors->has('phone'))
+                                        <span class="help-block">{{$errors->first('phone') }}</span>
+                                    @endif
                                 </div>
-                                <div class="form-group">
+                                {{-- error alamat --}}
+                                @if($errors->any())
+                                    <div class="form-group {{$errors->has('alamat')  ? 'has-error' : 'has-success'}}">
+                                 @else
+                                    <div class="form-group">
+                                @endif
                                     {!! Form::label('alamat','ALAMAT :',['class' => 'control-label']) !!}
                                     {!! Form::textarea('alamat',null,['class'=> 'form-control']) !!}
+                                    @if($errors->has('alamat'))
+                                        <span class="help-block">{{$errors->first('alamat') }}</span>
+                                    @endif
                                 </div>
+
                                 <div class="form-group">
                                     {!! Form::submit($submitButtonText,['class' => 'btn btn-primary form-controll'])!!}
                                 </div>

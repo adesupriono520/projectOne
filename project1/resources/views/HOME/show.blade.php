@@ -41,7 +41,7 @@
                 </tr>
                 <tr>
                     <th>TGL Lahir</th>
-                    <td>{{ $show->tgl_lahir }}</td>
+                    <td>{{ $show->tgl_lahir->format('d-m-Y') }}</td>
                 </tr>
                 <tr>
                     <th>JK</th>

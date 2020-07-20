@@ -29,18 +29,18 @@
                             @foreach ($mahasiswa as $data)
                                 <tbody>
                                     <tr>
-                                        <td>{{ $data->id }}</td>
-                                        <td>{{ $data->nim }}</td>
-                                        <td>{{ $data->nama }}</td>
-                                        <td>{{ $data->kelas }}</td>
-                                        <td>{{ $data->shift }}</td>
-                                        <td>{{ $data->alamat }}</td>
-                                        <td>{{ $data->tgl_lahir }}</td>
-                                        <td>{{ $data->jenis_kelamin }}</td>
-                                        <td>{{ $data->email }}</td>
-                                        <td>{{ $data->phone }}</td>
+                                        <td><center>{{ $data->id }}</center></td>
+                                        <td><center>{{ $data->nim }}</center></td>
+                                        <td><center>{{ $data->nama }}</center></td>
+                                        <td><center>{{ $data->kelas }}</center></td>
+                                        <td><center>{{ $data->shift }}</center></td>
+                                        <td><center>{{ $data->alamat }}</center></td>
+                                        <td><center>{{ $data->tgl_lahir->format('d-m-Y') }}</center></td>
+                                        <td><center>{{ $data->jenis_kelamin }}</center></td>
+                                        <td><center>{{ $data->email }}</center></td>
+                                        <td><center>{{ $data->phone }}</center></td>
                                         <td>
-                                            <div class="box-button">
+                                            <center><div class="box-button">
                                                 {{ link_to('home/'.$data->id, 'Detail', ['class' => 'btn btn-success btn-sm']) }}
                                             </div>
                                             <div class="box-button">
@@ -50,7 +50,7 @@
                                                 {!! Form::open(['method' => 'DELETE', 'action' => ['PagesController@destroy',$data->id]]) !!}
                                                 {!! Form::submit('Delete',['class' => 'btn btn-danger btn-sm']) !!}
                                                 {!! Form::close() !!}
-                                            </div>
+                                            </div></center>
                                         </td>
                                     </tr>
                                 </tbody>

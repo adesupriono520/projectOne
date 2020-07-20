@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Siswas;
+use Validator;
 class PagesController extends Controller
 {
     public function index(){
@@ -15,7 +16,22 @@ class PagesController extends Controller
         return view('HOME.create');
     }
     public function store(Request $request){
-        Siswas::create($request->all());
+        $input = $request->all();
+        $validator = Validator::make($input,[
+            'nim' => 'required|numeric|unique:mahasiswas,nim',
+            'nama'=> 'required|string|max:30',
+            'kelas'=> 'required|string|max:15',
+            'shift'=> 'required|string|max:1',
+            'alamat'=> 'required|string',
+            'tgl_lahir'=> 'required|date',
+            'jenis_kelamin' => 'required|string | max:1',
+            'email'=> 'required|email|max:25 |unique:mahasiswas,email',
+            'phone'=> 'required|numeric',
+            ]);
+        if($validator->fails()){
+            return redirect('create')->withInput()->withErrors($validator);
+        }
+        Siswas::create($input);
         return redirect('home');
     }
     public function show($id){
