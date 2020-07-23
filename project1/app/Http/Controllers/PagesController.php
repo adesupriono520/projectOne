@@ -26,6 +26,7 @@ class PagesController extends Controller
             'tgl_lahir'=> 'required|date',
             'jenis_kelamin' => 'required|string | max:1',
             'email'=> 'required|email|max:25 |unique:mahasiswas,email',
+            'jurusan' => 'required|string|max:25',
             'phone'=> 'required|numeric',
             ]);
         if($validator->fails()){

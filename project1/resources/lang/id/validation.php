@@ -146,6 +146,11 @@ return [
             'string' => 'Kelas harus berupa string !',
             'max' => 'Kelas tidak boleh lebih dari :max',
         ],
+        'jurusan' => [
+            'required' => 'Jurusan harus di isi!',
+            'string' => 'Jurusan harus berupa string !',
+            'max' => 'Jurusan tidak boleh lebih dari :max',
+        ],
         'shift' => [
             'required' => 'shift harus di isi !',
             'string' => 'shift harus berupa string !',

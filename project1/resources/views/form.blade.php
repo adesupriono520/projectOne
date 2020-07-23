@@ -56,6 +56,18 @@
                                         <span class="help-block">{{ $errors->first('kelas') }}</span>
                                     @endif
                                 </div>
+                                {{-- error jurusan --}}
+                                @if($errors->any())
+                                    <div class="form-group {{$errors->has('jurusan') ? 'has-error' : 'has-success'}}">
+                                @else
+                                    <div class="form-group">
+                                @endif
+                                    {!! Form::label('jurusan','JURUSAN :',['class'=> 'control-label']) !!}
+                                    {!! Form::text('jurusan',null,['class'=> 'form-control']) !!}
+                                    @if($errors->has('jurusan'))
+                                        <span class="help-block">{{$errors->first('jurusan') }}</span>
+                                    @endif
+                                    </div>
                                 {{-- error shift --}}
                                 @if($errors->any())
                                     <div class="form-group {{$errors->has('shift')  ? 'has-error' : 'has-success'}} ">

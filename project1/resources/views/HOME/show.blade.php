@@ -32,6 +32,10 @@
                     <td>{{ $show->kelas }}</td>
                 </tr>
                 <tr>
+                    <th>Jurusan</th>
+                    <td>{{$show->jurusan}}</td>
+                </tr>
+                <tr>
                     <th>Shift</th>
                     <td>{{ $show->shift }}</td>
                 </tr>
@@ -54,6 +58,10 @@
                 <tr>
                     <th>Phone</th>
                     <td>{{ $show->phone }}</td>
+                </tr>
+                <tr>
+                    <th>Kode Access</th>
+                    <td>{{$show->labs->kodeAccess }}</td>
                 </tr>
             </table>
         @endsection

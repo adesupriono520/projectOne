@@ -17,12 +17,14 @@
                                     <th scope="col"><center>Nim</center></th>
                                     <th scope="col"><center>Nama</center></th>
                                     <th scope="col"><center>Kelas</center></th>
+                                    <th scope="col"><center>Jurusan</center></th>
                                     <th scope="col"><center>Shift</center></th>
                                     <th scope="col"><center>Alamat</center></th>
                                     <th scope="col"><center>Tgl Lahir</center></th>
                                     <th scope="col"><center>JK</center></th>
                                     <th scope="col"><center>Email</center></th>
                                     <th scope="col"><center>Phone</center></th>
+                                    <th scope="col"><center>Code Access</center></th>
                                     <th scope="col"><center>Action</center></th>
                                 </tr>
                             </thead>
@@ -33,12 +35,14 @@
                                         <td><center>{{ $data->nim }}</center></td>
                                         <td><center>{{ $data->nama }}</center></td>
                                         <td><center>{{ $data->kelas }}</center></td>
+                                        <td><center> {{ $data->jurusan}}</center></td>
                                         <td><center>{{ $data->shift }}</center></td>
                                         <td><center>{{ $data->alamat }}</center></td>
                                         <td><center>{{ $data->tgl_lahir->format('d-m-Y') }}</center></td>
                                         <td><center>{{ $data->jenis_kelamin }}</center></td>
                                         <td><center>{{ $data->email }}</center></td>
                                         <td><center>{{ $data->phone }}</center></td>
+                                        <td><center>{{ !empty($data->labs->kodeAccess) ? $data->labs->kodeAccess : '-'}}</center></td>
                                         <td>
                                             <center><div class="box-button">
                                                 {{ link_to('home/'.$data->id, 'Detail', ['class' => 'btn btn-success btn-sm']) }}
