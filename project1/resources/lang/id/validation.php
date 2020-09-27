@@ -141,28 +141,23 @@ return [
             'string' => 'Nama harus berupa string !',
             'max' => 'Nama tidak boleh lebih dari : max',
         ],
-        'kelas' => [
-            'required' => 'Kelas harus di isi !',
-            'string' => 'Kelas harus berupa string !',
-            'max' => 'Kelas tidak boleh lebih dari :max',
-        ],
         'jurusan' => [
             'required' => 'Jurusan harus di isi!',
             'string' => 'Jurusan harus berupa string !',
             'max' => 'Jurusan tidak boleh lebih dari :max',
         ],
         'shift' => [
-            'required' => 'shift harus di isi !',
-            'string' => 'shift harus berupa string !',
-            'max' => 'shift tidak boleh lebih dari :max',
+            'required' => 'Shift harus di isi !',
+            'string' => 'Shift harus berupa string !',
+            'max' => 'Shift tidak boleh lebih dari :max',
         ],
         'alamat' => [
             'required' => 'Alamat harus di isi !',
             'string' => 'Alamat harus berupa string !',
         ],
         'tgl_lahir' => [
-            'required' => 'tgl Lahir harus di isi !',
-            'date' => 'tgl Lahir harus berupa date !',
+            'required' => 'Tgl Lahir harus di isi !',
+            'date' => 'Tgl Lahir harus berupa date !',
         ],
         'jenis_kelamin' => [
             'required' => 'Jenis kelamin harus di isi !',
@@ -178,6 +173,13 @@ return [
         'phone' => [
             'required' => 'Phone harus di isi !',
             'numeric' => 'Phone harus angka !',
+            'unique' => 'Phone sudah ada !',
+        ],
+        'kodeAccess' => [
+            'unique' => 'kodeAccess sudah ada !',
+        ],
+        'id_kelas' => [
+            'required' => 'Kelas harus di isi!',
         ],
     ],
 

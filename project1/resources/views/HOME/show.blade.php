@@ -28,10 +28,6 @@
                     <td>{{ $show->nama }}</td>
                 </tr>
                 <tr>
-                    <th>Kelas</th>
-                    <td>{{ $show->kelas }}</td>
-                </tr>
-                <tr>
                     <th>Jurusan</th>
                     <td>{{$show->jurusan}}</td>
                 </tr>
@@ -61,7 +57,7 @@
                 </tr>
                 <tr>
                     <th>Kode Access</th>
-                    <td>{{$show->labs->kodeAccess }}</td>
+                    <td>{{!empty($show->labs->kodeAccess) ? $show->labs->kodeAccess : '-' }}</td>
                 </tr>
             </table>
         @endsection

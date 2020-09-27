@@ -14,15 +14,16 @@ class CreateTableLab extends Migration
     public function up()
     {
         Schema::create('Labs', function (Blueprint $table) {
-            $table->integer('id_mahasiswa')->unsigned()->primary('id_mahasiswa');
+            $table->integer('mahasiswas_id')->unsigned()->primary('mahasiswas_id');
             $table->string('kodeAccess')->unique();
             $table->timestamps();
 
-                    $table->foreign('id_mahasiswa')
-                          ->references('id')->on('mahasiswa')
+                    $table->foreign('mahasiswas_id')
+                          ->references('id')->on('mahasiswas')
                           ->onDelete('cascade')
                           ->onUpdate('cascade');
         });
+
     }
 
     /**
@@ -31,7 +32,6 @@ class CreateTableLab extends Migration
      * @return void
      */
     public function down()
-    {
-        Schema::dropIfExists('Labs');
+    {        Schema::drop('Labs');
     }
 }

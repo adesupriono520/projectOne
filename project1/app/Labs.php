@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Labs extends Model
 {
     protected $table = 'Labs';
-    protected $primaryKey = 'id_mahasiswa';
+    protected $primaryKey = 'mahasiswas_id';
     protected $fillable = [
-        'id_mahasiswa',
+        'mahasiswas_id',
         'kodeAccess',
     ];
     public function mahasiswas(){
-        return $this->belongsTo('App\Siswas', 'id_mahasiswa');
+        return $this->belongsTo('App\Siswas', 'mahasiswas_id');
     }
 }

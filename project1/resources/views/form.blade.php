@@ -8,6 +8,9 @@
 </head>
     <body>
         @extends('master')
+            @if(isset($edit))
+                {!! Form::hidden('id', $edit->id) !!}
+            @endif
             <div class="container"><br>
                 <div class="model-fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
@@ -42,18 +45,6 @@
                                     {!! Form::text('nama',null,['class'=> 'form-control']) !!}
                                     @if($errors->has('nama'))
                                         <span class="help-block">{{ $errors->first('nama') }}</span>
-                                    @endif
-                                </div>
-                                {{-- error kelas --}}
-                                @if($errors->any())
-                                    <div class="form-group {{$errors->has('kelas')  ? 'has-error' : 'has-success'}}">
-                                @else
-                                    <div class="form-group">
-                                @endif
-                                    {!! Form::label('kelas','KELAS :',['class' => 'control-label']) !!}
-                                    {!! Form::text('kelas',null,['class'=> 'form-control']) !!}
-                                    @if($errors->has('kelas'))
-                                        <span class="help-block">{{ $errors->first('kelas') }}</span>
                                     @endif
                                 </div>
                                 {{-- error jurusan --}}
@@ -127,6 +118,17 @@
                                     @if($errors->has('phone'))
                                         <span class="help-block">{{$errors->first('phone') }}</span>
                                     @endif
+                                </div>
+                                {{-- kode Access--}}
+                                @if($errors->any())
+                                    <div class="form-group {{ $errors->has('kodeAccess') ? 'has-error' : 'has-success'}}">
+                                @else
+                                    <div class="form-group">
+                                @endif
+                                    <div class="form-group">
+                                        {!! Form::label('kodeAccess','KODE ACCESS :',['class'=> 'control-label']) !!}
+                                        {!! Form::text('kodeAccess',null,['class'=> 'form-control']) !!}
+                                    </div>
                                 </div>
                                 {{-- error alamat --}}
                                 @if($errors->any())

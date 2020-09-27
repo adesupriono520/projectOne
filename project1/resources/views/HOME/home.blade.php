@@ -13,10 +13,8 @@
                         <table class="table table-dark">
                             <thead>
                                 <tr>
-                                    <th scope="col"><center>ID</center></th>
                                     <th scope="col"><center>Nim</center></th>
                                     <th scope="col"><center>Nama</center></th>
-                                    <th scope="col"><center>Kelas</center></th>
                                     <th scope="col"><center>Jurusan</center></th>
                                     <th scope="col"><center>Shift</center></th>
                                     <th scope="col"><center>Alamat</center></th>
@@ -31,18 +29,18 @@
                             @foreach ($mahasiswa as $data)
                                 <tbody>
                                     <tr>
-                                        <td><center>{{ $data->id }}</center></td>
                                         <td><center>{{ $data->nim }}</center></td>
                                         <td><center>{{ $data->nama }}</center></td>
-                                        <td><center>{{ $data->kelas }}</center></td>
-                                        <td><center> {{ $data->jurusan}}</center></td>
+                                        <td><center>{{ $data->jurusan}}</center></td>
                                         <td><center>{{ $data->shift }}</center></td>
                                         <td><center>{{ $data->alamat }}</center></td>
                                         <td><center>{{ $data->tgl_lahir->format('d-m-Y') }}</center></td>
                                         <td><center>{{ $data->jenis_kelamin }}</center></td>
                                         <td><center>{{ $data->email }}</center></td>
                                         <td><center>{{ $data->phone }}</center></td>
-                                        <td><center>{{ !empty($data->labs->kodeAccess) ? $data->labs->kodeAccess : '-'}}</center></td>
+                                        <td><center>{{  !empty($data->labs->kodeAccess)
+                                                        ? $data->labs->kodeAccess : '-' }}
+                                        </center></td>
                                         <td>
                                             <center><div class="box-button">
                                                 {{ link_to('home/'.$data->id, 'Detail', ['class' => 'btn btn-success btn-sm']) }}
